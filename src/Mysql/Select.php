@@ -5,6 +5,7 @@ namespace App\Mysql;
 class Select
 {
     private $table;
+    private $fields = [];
     
     public function table(string $table)
     {
@@ -12,10 +13,20 @@ class Select
         return $this;
     }
 
+    public function fields(array $fields)
+    {
+        $this->fields = $fields;
+        return $this;
+    }
+
     public function getSql():string
     {
-        $query = 'SELECT * FROM %s';
-        return sprintf($query, $this->table);
+        $fields = '*';
+        if (!empty($this->fields)) {
+            $fields = implode(", ", $this->fields);
+        }
+        $query = 'SELECT %s FROM %s';
+        return sprintf($query, $fields, $this->table);
     }
 }
 
