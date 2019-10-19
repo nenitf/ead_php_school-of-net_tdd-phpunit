@@ -18,7 +18,7 @@ composer require phpunit/phpunit --dev
 - Add script no `composer.json` para usar phpunit (evitando necessidade de instalá-lo)
 ```
 "scripts": {
-    "test": "./vendor/bin/phpunit"
+    "test": "./vendor/bin/phpunit --colors=always"
 }
 ```
 > Para testar basta digitar: composer test
