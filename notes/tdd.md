@@ -8,16 +8,20 @@
 ## RED
 1. Criar o método de teste;
 1. Escrever asserts do teste;
-1. Rodar o teste;
-1. Confirmar a falha;
+1. Rodar o teste e confirmar a falha;
 > O teste deve falhar por nem conhecer a classe/método.
 
 # GREEN
 1. Criar classe se necessário;
 1. Criar o método da classe que está sendo testado;
 1. Retornar literalmente o esperado pelo teste;
-1. Confirmar o sucesso;
+1. Rodar o teste e confirmar o sucesso;
 > O teste deve passar por reconhecer o retorno - que foi implementado ao pé da letra do que era esperado pelo teste.
+
+# BLUE
+1. Refatorar a o método testado para funcionar como deve ser implementado;
+1. Rodar o teste e confirmar o sucesso;
+
 
 ## Dicas
 - O nome da classe de teste, por convenção deve ser `ClasseTestada` + `Teste` + `.php`;
