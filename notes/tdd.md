@@ -27,3 +27,5 @@
 - O nome da classe de teste, por convenção deve ser `ClasseTestada` + `Teste` + `.php`;
 - O nome da função de teste, por convenção deve ser `test` + `CenarioDoTeste`;
 - O ideal é um assert por test;
+
+## Testes de integração x unitários
