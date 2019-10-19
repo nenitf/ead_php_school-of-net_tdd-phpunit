@@ -6,7 +6,8 @@ class Select
 {
     private $table;
     private $fields = [];
-    
+    private $filters;
+
     public function table(string $table)
     {
         $this->table = $table;
@@ -19,14 +20,25 @@ class Select
         return $this;
     }
 
-    public function getSql():string
+    public function filter(Filters $filters)
     {
+        $this->filters = $filters->getSql();
+    }
+
+    public function getSql() :string
+    {
+
         $fields = '*';
         if (!empty($this->fields)) {
-            $fields = implode(", ", $this->fields);
+            $fields = implode(', ', $this->fields);
         }
-        $query = 'SELECT %s FROM %s';
-        return sprintf($query, $fields, $this->table);
+
+        $filters = '';
+        if (!empty($this->filters)) {
+            $filters = ' ' . $this->filters;
+        }
+
+        $query = 'SELECT %s FROM %s%s';
+        return sprintf($query, $fields, $this->table, $filters);
     }
 }
-

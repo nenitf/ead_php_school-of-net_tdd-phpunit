@@ -29,3 +29,7 @@
 - O ideal é um assert por test;
 
 ## Testes de integração x unitários
+> Existem também os teste comportamentais, que não foram abordados no curso
+- Integração: testa as funções que exigem relacionamento (integração) de classes;
+- Unitário: testa as funçoes atomicas da classe;
+
